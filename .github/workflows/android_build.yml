@@ -1,6 +1,17 @@
 name: Build Android App
 
 on:
+  workflow_dispatch:
+    inputs:
+      triggered_by:
+        description: 'Who triggered this workflow'
+        required: false
+        default: 'manual'
+        type: string
+      timestamp:
+        description: 'When this workflow was triggered'
+        required: false
+        type: string
   push:
     branches:
       - main  # O workflow será disparado quando houver mudanças na branch 'main'
